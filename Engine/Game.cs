@@ -1,11 +1,18 @@
-﻿
-
-namespace RockPaperScissors.Engine
+﻿namespace RockPaperScissors.Engine
 {
     internal class Game
     {
-        public static int Logic(int x, int y)
-        { return x * y; }
+        public static void Start()
+        {
+            
+
+
+
+            while (true)
+            {
+
+            }
+        }
 
     }
 }
