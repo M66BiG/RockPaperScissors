@@ -3,6 +3,7 @@ global using RockPaperScissors.Core;
 global using RockPaperScissors.Engine;
 global using RockPaperScissors.Exceptions;
 global using RockPaperScissors.Shared;
+global using RockPaperScissors.Enums;
 
 
 global using System;

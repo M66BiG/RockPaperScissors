@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.Shared
 {
-    public interface IResult
-    {
+    public interface INotification
+    { 
 
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.Shared
 {
-    internal interface IPlayer
+    public interface IPlayer
     {
+
+        string Name { get; }
     }
 }

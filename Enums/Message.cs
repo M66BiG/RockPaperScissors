@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RockPaperScissors.Shared
+namespace RockPaperScissors.Enums
 {
-    public interface IResult
+    public enum Message
     {
-
     }
 }

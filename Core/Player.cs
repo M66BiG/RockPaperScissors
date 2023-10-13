@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.Core
 {
-    internal class Player
+    internal class Player : IPlayer
     {
+        public string Name { get; set; }
+
+
+       
     }
 }

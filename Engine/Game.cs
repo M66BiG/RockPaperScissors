@@ -5,9 +5,6 @@
         public static void Start()
         {
             
-
-
-
             while (true)
             {
 
