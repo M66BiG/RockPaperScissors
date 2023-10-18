@@ -4,8 +4,6 @@ global using RockPaperScissors.Engine;
 global using RockPaperScissors.Exceptions;
 global using RockPaperScissors.Shared;
 global using RockPaperScissors.Enums;
-
-
 global using System;
 global using System.Collections.Generic;
 global using System.Linq;

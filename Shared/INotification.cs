@@ -9,6 +9,5 @@ namespace RockPaperScissors.Shared
     public interface INotification
     {
         //static void ShowMessage(MessageType messageType, object x, object y);
-
     }
 }

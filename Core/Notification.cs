@@ -7,7 +7,6 @@
             string messageText = GetMessage(messageType, x, y);
             Console.WriteLine(messageText);
         }
-
         private static string GetMessage(MessageType messageType, object x, object y)
         {
             return messageType switch

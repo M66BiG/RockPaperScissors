@@ -6,9 +6,7 @@
         {
             Notification.ShowMessage(MessageType.MakeMove,null,null);
             player.Move = GetMove(player);
-            
         }
-
         public static Choice GetMove(Player player)
         {
             int inputNum = Logic.CheckNumber(Console.ReadLine());
@@ -21,11 +19,10 @@
                 // Throw Error
                 return GetMove(player);
             }
-
         }
         public static void SetNPCMove(Player NPC)
         {
-            Random random =new Random();
+            Random random =new();
             NPC.Move = (Choice)random.Next(1, 4);
         }
     }

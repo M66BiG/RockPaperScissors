@@ -10,26 +10,19 @@ namespace RockPaperScissors.Exceptions
     {
 
     }
-
-
     //Placeholder
     public class CustomExceptions2 : Exception
     {
 
     }
-
     public class CustomExceptions3 : Exception
     {
 
     }
-
     public class CustomExceptions4 : Exception
     {
 
-
-
     }
-
     public class CustomExceptions5 : Exception
     {
 
