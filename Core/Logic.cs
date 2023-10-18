@@ -37,17 +37,13 @@
         }
         public static Result GetRoundResult(Choice player, Choice NPC)
         {
-            switch (player)
+            return player switch
             {
-                case Choice.Stein:
-                    return NPC == Choice.Schere ? Result.Win : NPC == Choice.Papier ? Result.Lose : Result.Draw;
-                case Choice.Papier:
-                    return NPC == Choice.Stein ? Result.Win : NPC == Choice.Schere ? Result.Lose : Result.Draw;
-                case Choice.Schere:
-                    return NPC == Choice.Papier ? Result.Win : NPC == Choice.Stein ? Result.Lose : Result.Draw;
-                default: 
-                    return Result.Draw;
-            }
+                Choice.Stein => NPC == Choice.Schere ? Result.Win : NPC == Choice.Papier ? Result.Lose : Result.Draw,
+                Choice.Papier => NPC == Choice.Stein ? Result.Win : NPC == Choice.Schere ? Result.Lose : Result.Draw,
+                Choice.Schere => NPC == Choice.Papier ? Result.Win : NPC == Choice.Stein ? Result.Lose : Result.Draw,
+                _ => Result.Draw,
+            };
         }
     }
 }
