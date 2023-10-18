@@ -10,31 +10,20 @@
 
         private static string GetMessage(MessageType messageType, object x, object y)
         {
-            switch (messageType)
+            return messageType switch
             {
-                case MessageType.Welcome:
-                    return $"Willkommen im Spiel: {x}.";
-                case MessageType.Quit:
-                    return "Beende das Spiel";
-                case MessageType.SetName:
-                    return "Wie heißt du?";
-                case MessageType.SetNPC:
-                    return "Setze den Namen des NPC's";
-                case MessageType.MakeMove:
-                    return "Wähle zwischen:\n1: Stein \n2: Papier \n3: Schere";
-                case MessageType.SumMove:
-                    return $"Du hast {x} gewählt und dein Gegner hat {y} gewählt";
-                case MessageType.ResultMoveWin:
-                    return $"Der Move von {x} \"{y}\" hat gewonnen";
-                case MessageType.ResultMoveDraw:
-                    return "Gleichstand! Keiner hat diese Runde gewonnen.";
-                case MessageType.ResultGame:
-                    return "???????";
-                case MessageType.Points:
-                    return $"Du hast {x} Punkte. \t Dein Gegner hat {y} Punkte";
-                default:
-                    return "Unbekannte Eingabe.";
-            }
+                MessageType.Welcome => $"Willkommen im Spiel: {x}.",
+                MessageType.Quit => "Beende das Spiel",
+                MessageType.SetName => "Wie heißt du?",
+                MessageType.SetNPC => "Setze den Namen des NPC's",
+                MessageType.MakeMove => "Wähle zwischen:\n1: Stein \n2: Papier \n3: Schere",
+                MessageType.SumMove => $"Du hast {x} gewählt und dein Gegner hat {y} gewählt",
+                MessageType.ResultMoveWin => $"Der Move von {x} \"{y}\" hat gewonnen",
+                MessageType.ResultMoveDraw => "Gleichstand! Keiner hat diese Runde gewonnen.",
+                MessageType.ResultGame => "???????",
+                MessageType.Points => $"Du hast {x} Punkte. \t Dein Gegner hat {y} Punkte",
+                _ => "Unbekannte Eingabe.",
+            };
         }
     }
 }
