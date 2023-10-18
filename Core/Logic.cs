@@ -1,6 +1,6 @@
 ﻿namespace RockPaperScissors.Core
 {
-    public  class GameMoves
+    public class Logic
     {
 
     }
