@@ -6,12 +6,12 @@ namespace RockPaperScissors.Core
         public virtual string? Name { get; set; }
 
         public int Points { get; set; } = 0;
-
+        public Choice Move { get; set; }
 
         public static Player SetPlayerData()
         {
-            Notification n = new Notification();
-            n.ShowMessage(MessageType.SetName, null, null);
+            
+            Notification.ShowMessage(MessageType.SetName, null, null);
             Player player = new Player();
             player.Name = Console.ReadLine();
             return player;
@@ -19,12 +19,14 @@ namespace RockPaperScissors.Core
 
         public static Player SetNPCData()
         {
-            Notification n = new Notification();
-            n.ShowMessage(MessageType.SetNPC, null, null);
+            
+            Notification.ShowMessage(MessageType.SetNPC, null, null);
             Player NPC = new Player();
             NPC.Name = Console.ReadLine();
             return NPC;
         }
+        
+        
     }
 
     

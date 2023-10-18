@@ -2,8 +2,8 @@
 {
     public enum Choice
     {
-        Rock,
-        Paper,
-        Scissors
+        Stein = 1,
+        Papier,
+        Schere
     }
 }

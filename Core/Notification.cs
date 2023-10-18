@@ -2,18 +2,18 @@
 {
     public class Notification : INotification
     {
-        public void ShowMessage(MessageType messageType, object x, object y)
+        public static void ShowMessage(MessageType messageType, object x, object y)
         {
             string messageText = GetMessage(messageType, x, y);
             Console.WriteLine(messageText);
         }
 
-        private string GetMessage(MessageType messageType, object x, object y)
+        private static string GetMessage(MessageType messageType, object x, object y)
         {
             switch (messageType)
             {
                 case MessageType.Welcome:
-                    return "Willkommen im Spiel.";
+                    return $"Willkommen im Spiel: {x}.";
                 case MessageType.Quit:
                     return "Beende das Spiel";
                 case MessageType.SetName:
@@ -21,9 +21,9 @@
                 case MessageType.SetNPC:
                     return "Setze den Namen des NPC's";
                 case MessageType.MakeMove:
-                    return "Wähle zwischen Schere Stein und Papier";
+                    return "Wähle zwischen:\n1: Stein \n2: Papier \n3: Schere";
                 case MessageType.SumMove:
-                    return $"Du hast {x} und dein Gegner hat {y} gewählt";
+                    return $"Du hast {x} gewählt und dein Gegner hat {y} gewählt";
                 case MessageType.ResultMoveWin:
                     return $"Der Move von {x} \"{y}\" hat gewonnen";
                 case MessageType.ResultMoveDraw:

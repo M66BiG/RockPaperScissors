@@ -8,7 +8,7 @@ namespace RockPaperScissors.Shared
 {
     public interface INotification
     {
-        void ShowMessage(MessageType messageType, object x, object y);
+        //static void ShowMessage(MessageType messageType, object x, object y);
 
     }
 }
