@@ -7,9 +7,9 @@
             string messageText = GetMessage(messageType, x, y);
             Console.WriteLine(messageText);
         }
-        private static string GetMessage(MessageType messageType, object x, object y)
-        {
-            return messageType switch
+        private static string GetMessage(MessageType messageType, dynamic x, object y) =>
+        
+            messageType switch
             {
                 MessageType.Welcome => $"Willkommen im Spiel: {x}.",
                 MessageType.Quit => "Beende das Spiel",
@@ -23,6 +23,6 @@
                 MessageType.Points => $"Du hast {x} Punkte. \t Dein Gegner hat {y} Punkte",
                 _ => "Unbekannte Eingabe.",
             };
-        }
+        
     }
 }

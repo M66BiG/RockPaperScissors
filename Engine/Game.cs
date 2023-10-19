@@ -4,8 +4,8 @@
     {
         public static void Start()
         {
-            var player = Player.SetPlayerData();
-            var NPC = Player.SetNPCData();
+            var player = Player.PlayerCreate(MessageType.SetName);
+            var NPC = Player.PlayerCreate(MessageType.SetNPC);
             Notification.ShowMessage(MessageType.Welcome,player.Name,null);
             while (true)
             {
