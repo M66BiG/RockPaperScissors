@@ -2,28 +2,34 @@
 {
     public class Moves
     {
-        public static void MakeMove(Player player)
+        public static void MakeMove(dynamic messageType, Player player)
         {
-            Notification.ShowMessage(MessageType.MakeMove,null,null);
-            player.Move = GetMove(player);
-        }
-        public static Choice GetMove(Player player)
-        {
-            int inputNum = Logic.CheckNumber(Console.ReadLine());
-            if (Enum.IsDefined(typeof(Choice), inputNum))
+            Moves move = new();
+            if(player.Type == PlayerType.Human)
             {
-                return (Choice)inputNum;
+                
+                Notification.ShowMessage(messageType, null, null);
+                player.Move = move.GetMove(player);
+            }
+            else
+            {
+                Random random = new();
+                player.Move = (SSP)random.Next(1, 4);
+            }
+        }
+        public SSP GetMove(Player player)
+        {
+            Logic logic = new();
+            int inputNum = logic.CheckNumber(Console.ReadLine());
+            if (Enum.IsDefined(typeof(SSP), inputNum))
+            {
+                return (SSP)inputNum;
             }
             else
             {
                 // Throw Error
                 return GetMove(player);
             }
-        }
-        public static void SetNPCMove(Player NPC)
-        {
-            Random random =new();
-            NPC.Move = (Choice)random.Next(1, 4);
         }
     }
 }

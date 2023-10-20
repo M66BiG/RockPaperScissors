@@ -2,7 +2,7 @@
 {
     public class Logic
     {
-        public static int CheckNumber(string a)
+        public int CheckNumber(string a)
         {
             if (int.TryParse(a, out int inputNum))
             {
@@ -16,16 +16,19 @@
         }
         public static void ShowResult(Player player, Player NPC)
         {
-            Result result = GetRoundResult(player.Move, NPC.Move);
+            Logic logic = new();
+            Result result = logic.GetRoundResult(player.Move, NPC.Move);
             switch (result)
             {
                 case Result.Lose:
                     Notification.ShowMessage(MessageType.SumMove, player.Move, NPC.Move);
                     Notification.ShowMessage(MessageType.ResultMoveWin, NPC.Name, NPC.Move);
+                    NPC.Points++;
                     break;
                 case Result.Win:
                     Notification.ShowMessage(MessageType.SumMove, player.Move, NPC.Move);
                     Notification.ShowMessage(MessageType.ResultMoveWin, player.Name, player.Move);
+                    player.Points++;
                     break;
                 case Result.Draw:
                     Notification.ShowMessage(MessageType.SumMove, player.Move, NPC.Move);
@@ -35,15 +38,14 @@
                     break;
             }
         }
-        public static Result GetRoundResult(Choice player, Choice NPC)
-        {
-            return player switch
+        public Result GetRoundResult(SSP player, SSP NPC) =>
+            player switch
             {
-                Choice.Stein => NPC == Choice.Schere ? Result.Win : NPC == Choice.Papier ? Result.Lose : Result.Draw,
-                Choice.Papier => NPC == Choice.Stein ? Result.Win : NPC == Choice.Schere ? Result.Lose : Result.Draw,
-                Choice.Schere => NPC == Choice.Papier ? Result.Win : NPC == Choice.Stein ? Result.Lose : Result.Draw,
+                SSP.Stein => NPC == SSP.Schere ? Result.Win : NPC == SSP.Papier ? Result.Lose : Result.Draw,
+                SSP.Papier => NPC == SSP.Stein ? Result.Win : NPC == SSP.Schere ? Result.Lose : Result.Draw,
+                SSP.Schere => NPC == SSP.Papier ? Result.Win : NPC == SSP.Stein ? Result.Lose : Result.Draw,
                 _ => Result.Draw,
             };
-        }
+        
     }
 }

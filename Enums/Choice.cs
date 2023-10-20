@@ -2,8 +2,7 @@
 {
     public enum Choice
     {
-        Stein = 1,
-        Papier,
-        Schere
+        Ja = 1,
+        Nein
     }
 }

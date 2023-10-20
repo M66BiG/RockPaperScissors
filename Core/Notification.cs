@@ -4,15 +4,15 @@
     {
         public static void ShowMessage(MessageType messageType, object x, object y)
         {
-            string messageText = GetMessage(messageType, x, y);
+            Notification n = new();
+            string messageText = n.GetMessage(messageType, x, y);
             Console.WriteLine(messageText);
         }
-        private static string GetMessage(MessageType messageType, dynamic x, object y) =>
-        
+        private string GetMessage(MessageType messageType, object x, object y) =>
             messageType switch
             {
                 MessageType.Welcome => $"Willkommen im Spiel: {x}.",
-                MessageType.Quit => "Beende das Spiel",
+                MessageType.Quit => "Möchtest du das Spiel beenden?\n1: Ja\n2: Nein",
                 MessageType.SetName => "Wie heißt du?",
                 MessageType.SetNPC => "Setze den Namen des NPC's",
                 MessageType.MakeMove => "Wähle zwischen:\n1: Stein \n2: Papier \n3: Schere",
